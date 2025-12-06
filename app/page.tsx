@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabaseClient';
+import PostForm from '@/components/PostForm';
 
 // この関数が「非同期（async）」になっているのがポイント！
 // サーバー側でデータを取ってくるので、ブラウザが重くなりません。
@@ -25,7 +26,7 @@ export default async function Home() {
       </h1>
 
       <div className="max-w-2xl mx-auto space-y-4">
-        {/* 2. 取ってきたデータ(logs)をループして表示する */}
+        <PostForm />
         {logs.map((log) => (
           <div key={log.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
             <div className="flex justify-between items-center mb-2">
